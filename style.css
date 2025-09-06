@@ -1,0 +1,117 @@
+:root { color-scheme: light dark; }
+body{font-family:'Poppins',sans-serif}
+.theme-pink{ background: linear-gradient(135deg,#ffe4ec,#f3e8ff); }
+
+/* Cards */
+.glass-card{
+  background: rgba(255,255,255,.8);
+  box-shadow: 0 20px 60px rgba(236,72,153,.18);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.65);
+}
+
+/* Titles */
+.kawaii-title{
+  background:linear-gradient(90deg,#fb7185,#ec4899,#c084fc);
+  -webkit-background-clip:text; color:transparent;
+}
+.section-title{ position:relative; color:#1f2937; }
+.section-title::after{
+  content:""; position:absolute; left:50%; transform:translateX(-50%);
+  bottom:-10px; width:84px; height:6px; border-radius:9999px;
+  background:linear-gradient(90deg,#fecdd3,#fda4af,#fecdd3);
+}
+
+/* Badges */
+.fee-highlight,.ss-highlight{
+  display:block; width:max-content; margin:0 auto; padding:.6rem 1rem;
+  border-radius:12px; font-weight:800
+}
+.fee-highlight{ background:#fff; border:2px solid #f1f5f9 }
+.ss-highlight{ background:linear-gradient(90deg,#ec4899,#db2777); color:#fff }
+
+/* CTA Rules & Event – compact */
+.rules-button{
+  all: unset;
+  position: relative;          /* <— buat ripple */
+  overflow: hidden;            /* <— clip ripple */
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto !important;
+  max-width: max-content !important;
+  height: auto !important;
+  padding: .65rem 1.1rem;
+  gap: .5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg,#ec4899 0%, #db2777 50%, #ec4899 100%);
+  background-size: 200% 200%;
+  box-shadow: 0 10px 28px rgba(236,72,153,.35);
+  border: 2px solid transparent;
+  transition: transform .2s ease, box-shadow .2s ease, background-position 1.2s ease;
+}
+.rules-button:hover{ transform: translateY(-2px); background-position: 100% 0; box-shadow:0 14px 36px rgba(236,72,153,.48) }
+.rules-button:active{ transform: translateY(0) scale(.98) }
+.rules-button svg{ flex: 0 0 auto; }
+
+/* Tiles & buttons */
+.pink-tile{ background:#fff; border:2px solid #ffe4ec; border-radius:1.1rem; box-shadow:0 10px 30px rgba(236,72,153,.16) }
+.kitty-ball{
+  background:radial-gradient(circle at 60% 40%, #f9a8d4, #ec4899 60%, #db2777 100%);
+  color:#fff; font-weight:800;
+}
+.pink-btn{
+  position: relative;          /* <— buat ripple */
+  overflow: hidden;            /* <— clip ripple */
+  background: linear-gradient(145deg, #ffe4ec, #fecdd3);
+  border: 2px solid #f9a8d4; color: #9d174d;
+  font-weight: 700; border-radius: 1rem; padding: .8rem 1.25rem;
+  box-shadow: 0 8px 18px rgba(236,72,153,.25); transition: all .25s ease;
+}
+.pink-btn:hover{ background:linear-gradient(145deg,#fecdd3,#fda4af) }
+
+/* QRIS card */
+.qris-card{ border-radius:22px; padding:18px; border:3px solid #f9a8d4; background:#fff; box-shadow:0 18px 50px rgba(236,72,153,.22); max-width:560px;width:100% }
+.qris-header{ font-weight:800; text-align:center; margin-bottom:12px }
+.qris-img{ display:block; width:100%; border-radius:14px }
+.qris-footer{ margin-top:10px; text-align:center; font-weight:700 }
+
+/* Ribbon badges */
+.sticker.ribbon{
+  position:absolute; top:-12px; padding:.35rem .8rem;
+  font-weight:900; text-transform:uppercase;
+  background:#ffb3d6; color:#9d174d; border:2px dashed #f9a8d4;
+  border-radius:10px; box-shadow:0 8px 18px rgba(236,72,153,.25);
+}
+.sticker.ribbon.left{ left:16px; transform:rotate(-6deg) }
+.sticker.ribbon.right{ right:16px; transform:rotate(6deg) }
+
+/* Toast */
+.toast-container{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999}
+.toast{background:#111827;color:#fff;padding:12px 16px;border-radius:12px;opacity:0}
+.toast-show{animation:toastIn .25s ease-out forwards}
+.toast-hide{animation:toastOut .2s ease-in forwards}
+@keyframes toastIn{to{opacity:1}}
+@keyframes toastOut{to{opacity:0}}
+
+.toggle-btn{background:#ffe4ec;color:#7f1d1d}
+body.dark{ background:#1e1631 }
+body.dark .glass-card{ background:rgba(17,24,39,.7) }
+body.dark .dark-text{ color:#e5e7eb }
+
+/* Ripple Effect */
+.ripple{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  background:rgba(255,255,255,.35);
+  transform:scale(0);
+  animation:ripple-burst .6s ease-out forwards;
+}
+@keyframes ripple-burst{
+  to{ transform:scale(1.6); opacity:0; }
+}

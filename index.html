@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pembayaran Levinzy</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>.kawaii-title{ font-family:'Baloo 2','Poppins',system-ui,sans-serif; }</style>
+</head>
+<body class="theme-pink min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+
+  <header class="w-full max-w-5xl glass-card rounded-3xl p-6 md:p-10 mb-10 relative overflow-hidden">
+    <!-- Dark mode toggle -->
+    <button id="darkToggle" class="toggle-btn px-3 py-2 rounded-lg text-sm font-bold absolute right-4 top-4 z-10">🌙</button>
+
+    <div class="text-center">
+      <h1 class="kawaii-title text-3xl md:text-5xl font-extrabold mb-4">Pembayaran Levinzy</h1>
+
+      <!-- CTA Rules & Event -->
+      <div class="flex justify-center mb-6">
+        <a href="https://whatsapp.com/channel/0029VbAXMcn05MUkQKF5Lq0P" target="_blank"
+           class="rules-button" aria-label="Buka Rules & Event Levinzy">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          Lihat Rules & Event
+        </a>
+      </div>
+
+      <!-- Badges -->
+      <div class="space-y-2 mb-6">
+        <div class="fee-highlight text-sm md:text-lg font-bold">FEE 3K PP 9K</div>
+        <div class="ss-highlight text-sm md:text-lg font-bold">WAJIB SS DETAIL SETELAH TF</div>
+      </div>
+
+      <p class="text-base md:text-lg text-gray-700 dark-text mt-2 max-w-2xl mx-auto">
+        Pilih metode pembayaran favorit Anda untuk transaksi yang aman dan cepat.
+      </p>
+    </div>
+  </header>
+
+  <main class="w-full max-w-5xl mb-10 space-y-12">
+    <!-- QRIS -->
+    <section class="glass-card rounded-3xl p-8 md:p-10 flex flex-col items-center relative">
+      <span class="sticker ribbon left">SCAN HERE</span>
+      <span class="sticker ribbon right">CUTE!</span>
+
+      <h2 class="section-title text-2xl md:text-3xl font-extrabold mb-6">QRIS</h2>
+      <div class="kawaii-divider"></div>
+
+      <p class="text-base md:text-lg text-gray-700 dark-text mb-8 text-center max-w-xl">
+        Scan kode QR premium kami untuk pembayaran instan.
+      </p>
+
+      <div class="qris-card theme-kitty">
+        <div class="qris-header">Scan Here</div>
+        <img src="images/qris.jpg" alt="Kode QR" class="qris-img" data-reveal>
+        <div class="qris-footer">belongs to @levinzy • jangan lupa SS</div>
+      </div>
+    </section>
+
+    <!-- E-Wallet -->
+    <section class="glass-card rounded-3xl p-8 md:p-10 flex flex-col items-center">
+      <h2 class="section-title text-2xl md:text-3xl font-extrabold mb-8">E-Wallet (OVO, DANA, GOPAY)</h2>
+      <div class="kawaii-divider"></div>
+
+      <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- OVO -->
+        <div class="ewallet-card pink-tile flex flex-col items-center">
+          <div class="kitty-ball w-24 h-24 rounded-full mb-6 flex items-center justify-center text-white font-extrabold text-2xl shadow-lg">OVO</div>
+          <p class="text-md text-gray-700 dark-text mb-6 text-center font-semibold">Atas Nama: <span>Levin</span></p>
+          <input id="ovoNumber" type="text" value="081210701366" readonly class="sr-only">
+          <button onclick="copyById('ovoNumber',this)" class="box-button pink-btn rounded-xl">Salin Nomor OVO</button>
+        </div>
+
+        <!-- DANA -->
+        <div class="ewallet-card pink-tile flex flex-col items-center">
+          <div class="kitty-ball w-24 h-24 rounded-full mb-6 flex items-center justify-center text-white font-extrabold text-2xl shadow-lg">DANA</div>
+          <p class="text-md text-gray-700 dark-text mb-6 text-center font-semibold">Atas Nama: <span>Mariyanah</span></p>
+          <input id="danaNumber" type="text" value="081210701366" readonly class="sr-only">
+          <button onclick="copyById('danaNumber',this)" class="box-button pink-btn rounded-xl">Salin Nomor DANA</button>
+        </div>
+
+        <!-- GOPAY -->
+        <div class="ewallet-card pink-tile flex flex-col items-center">
+          <div class="kitty-ball w-24 h-24 rounded-full mb-6 flex items-center justify-center text-white font-extrabold text-2xl shadow-lg">GOPAY</div>
+          <p class="text-md text-gray-700 dark-text mb-6 text-center font-semibold">Atas Nama: <span>Alvinoow</span></p>
+          <input id="gopayNumber" type="text" value="081210701366" readonly class="sr-only">
+          <button onclick="copyById('gopayNumber',this)" class="box-button pink-btn rounded-xl">Salin Nomor GOPAY</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full max-w-5xl text-center">
+    <p class="text-lg text-gray-700 dark-text">Ikuti saluran WhatsApp kami untuk update aturan dan event eksklusif terbaru.</p>
+  </footer>
+
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
